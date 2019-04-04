@@ -1137,3 +1137,54 @@ FOREIGN KEY ("order_id")
   ↳ /home/camila/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /home/camila/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/camila/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/camila/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/camila/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/camila/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/camila/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events" WHERE "events"."start_date" = ? AND "events"."event_venue_id" IS NULL[0m  [["start_date", "2019-09-17"]]
+  [1m[36mEvent Create (4.0ms)[0m  [1m[32mINSERT INTO "events" ("start_date", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["start_date", "2019-09-17"], ["created_at", "2019-04-04 19:18:03.759502"], ["updated_at", "2019-04-04 19:18:03.759502"]]
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "events" WHERE "events"."start_date" = ? AND "events"."event_venue_id" IS NULL[0m  [["start_date", "2019-09-17"]]
+  [1m[36mEvent Create (1.4ms)[0m  [1m[32mINSERT INTO "events" ("start_date", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["start_date", "2019-09-17"], ["created_at", "2019-04-04 19:19:04.091204"], ["updated_at", "2019-04-04 19:19:04.091204"]]
+  [1m[35m (9.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mEventVenue Load (0.4ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEventVenue Load (0.2ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "events" WHERE "events"."start_date" = ? AND "events"."event_venue_id" = ?[0m  [["start_date", "2019-09-17"], ["event_venue_id", 1]]
+  [1m[36mEvent Create (1.9ms)[0m  [1m[32mINSERT INTO "events" ("start_date", "event_venue_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["start_date", "2019-09-17"], ["event_venue_id", 1], ["created_at", "2019-04-04 19:21:16.937139"], ["updated_at", "2019-04-04 19:21:16.937139"]]
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events" WHERE "events"."start_date" = ? AND "events"."event_venue_id" = ?[0m  [["start_date", "2019-09-17"], ["event_venue_id", 1]]
+  [1m[36mEvent Create (1.8ms)[0m  [1m[32mINSERT INTO "events" ("start_date", "event_venue_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["start_date", "2019-09-17"], ["event_venue_id", 1], ["created_at", "2019-04-04 19:21:26.002572"], ["updated_at", "2019-04-04 19:21:26.002572"]]
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "events" WHERE "events"."start_date" = ? AND "events"."event_venue_id" = ?[0m  [["start_date", "2019-09-17"], ["event_venue_id", 1]]
+  [1m[36mEvent Create (1.5ms)[0m  [1m[32mINSERT INTO "events" ("start_date", "event_venue_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["start_date", "2019-09-17"], ["event_venue_id", 1], ["created_at", "2019-04-04 19:21:48.095514"], ["updated_at", "2019-04-04 19:21:48.095514"]]
+  [1m[35m (10.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mEventVenue Load (0.2ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "events" WHERE "events"."start_date" = ? AND "events"."event_venue_id" = ?[0m  [["start_date", "2019-09-17"], ["event_venue_id", 1]]
+  [1m[36mEvent Create (1.3ms)[0m  [1m[32mINSERT INTO "events" ("start_date", "event_venue_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["start_date", "2019-09-17"], ["event_venue_id", 1], ["created_at", "2019-04-04 19:22:36.911583"], ["updated_at", "2019-04-04 19:22:36.911583"]]
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events" WHERE "events"."start_date" = ? AND "events"."event_venue_id" = ?[0m  [["start_date", "2019-09-17"], ["event_venue_id", 1]]
+  [1m[36mEventVenue Load (0.2ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "events" WHERE "events"."start_date" = ? AND "events"."event_venue_id" = ?[0m  [["start_date", "2019-09-17"], ["event_venue_id", 1]]
+  [1m[36mEvent Create (3.1ms)[0m  [1m[32mINSERT INTO "events" ("start_date", "event_venue_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["start_date", "2019-09-17"], ["event_venue_id", 1], ["created_at", "2019-04-04 19:23:50.728459"], ["updated_at", "2019-04-04 19:23:50.728459"]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mEventVenue Load (0.2ms)[0m  [1m[34mSELECT  "event_venues".* FROM "event_venues" WHERE "event_venues"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "events" WHERE "events"."start_date" = ? AND "events"."event_venue_id" = ?[0m  [["start_date", "2019-09-17"], ["event_venue_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
